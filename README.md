@@ -53,6 +53,29 @@ Model Metrics
 - Precision
 - Recall
 - F1 Score
+- 
+   Sample Output
+
+==================================================
+CUSTOMER CHURN PREDICTION
+==================================================
+
+Accuracy: 0.82
+ROC-AUC Score: 0.86
+
+Confusion Matrix
+
+[[950 120]
+ [140 430]]
+
+Top Churn Drivers
+
+Feature              Coefficient
+
+Contract             1.12
+MonthlyCharges       0.84
+tenure              -0.76
+InternetService      0.65
 
 Key Insights
 
