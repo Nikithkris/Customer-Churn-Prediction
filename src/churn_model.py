@@ -55,7 +55,14 @@ model.fit(
     X_train,
     y_train
 )
-
+importance = pd.DataFrame({
+    "Feature": X.columns,
+    "Coefficient": model.coef_[0]
+})
+importance = importance.sort_values(
+    by="Coefficient",
+    ascending=False
+)
 # Predictions
 predictions = model.predict(
     X_test
@@ -73,6 +80,10 @@ print(f"Accuracy: {accuracy:.2f}")
 print(f"ROC-AUC Score: {roc_auc:.2f}")
 print(f"Accuracy: {accuracy:.2f}")
 print(f"ROC-AUC Score: {roc_auc:.2f}")
+print("\nTop Churn Drivers")
+print(
+    importance.head(10)
+)
 
 print("\nConfusion Matrix")
 print(cm)
