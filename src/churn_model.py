@@ -69,7 +69,25 @@ accuracy = accuracy_score(
 print("=" * 50)
 print("CUSTOMER CHURN PREDICTION")
 print("=" * 50)
+print(f"Accuracy: {accuracy:.2f}")
 
-print(
-    f"Accuracy: {accuracy:.2f}"
+print("\nConfusion Matrix")
+print(cm)
+
+print("\nClassification Report")
+print(report)
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+accuracy = accuracy_score(
+    y_test,
+    predictions
+)
+cm = confusion_matrix(
+    y_test,
+    predictions
+)
+
+report = classification_report(
+    y_test,
+    predictions
 )
